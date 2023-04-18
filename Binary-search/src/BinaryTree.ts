@@ -41,18 +41,6 @@ export class BinaryTree<G> implements Tree<G> {
         }
     }
 
-    inorder(node: TreeNode<G> | null): void {
-        if (node) {
-            if (node.left) {
-                this.inorder(node.left);
-            }
-            console.log(node.data);
-            if (node.right) {
-                this.inorder(node.right);
-            }
-        }
-    }
-
     getSize(): number {
         return this.totalNode;
     }
@@ -93,7 +81,6 @@ export class BinaryTree<G> implements Tree<G> {
         }
         return undefined;
     }
-
 
     deleteData(data: G): boolean {
         let currentNode = this.searchData(data);
@@ -138,5 +125,40 @@ export class BinaryTree<G> implements Tree<G> {
             }
         }
         return false;
+    }
+
+
+    inorder(node: TreeNode<G> | null): void {
+        if (node) {
+            if (node.left) {
+                this.inorder(node.left);
+            }
+            console.log(node.data);
+            if (node.right) {
+                this.inorder(node.right);
+            }
+        }
+    }
+    preorder(node: TreeNode<G> | null): void {
+        if (node) {
+            console.log(node.data);
+            if (node.left) {
+                this.inorder(node.left);
+            }
+            if (node.right) {
+                this.inorder(node.right);
+            }
+        }
+    }
+    postorder(node: TreeNode<G> | null): void {
+        if (node) {
+            if (node.left) {
+                this.inorder(node.left);
+            }
+            if (node.right) {
+                this.inorder(node.right);
+            }
+            console.log(node.data);
+        }
     }
 }

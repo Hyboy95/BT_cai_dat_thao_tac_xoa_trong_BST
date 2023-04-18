@@ -16,5 +16,11 @@ tree.insert(14);
 
 console.log(tree.deleteData(70));
 // console.log(tree.findParentOfNode(80));
-tree.inorder(tree.root);
+console.log('Duyet inorder:');
+tree.inorder(tree.root)
+console.log('Duyet preorder:');
+tree.preorder(tree.root);
+console.log('Duyet postorder:');
+tree.postorder(tree.root);
+console.log(tree.searchData(70));
 // console.log(tree.totalNode);
